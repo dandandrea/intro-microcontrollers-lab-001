@@ -1,10 +1,18 @@
+#define LED_ON_DURATION_MILLISECONDS  500
+#define LED_OFF_DURATION_MILLISECONDS 500
+
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(115200);
+
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  Serial.println("Hello, World.");
-  delay(1000);
+
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(LED_ON_DURATION_MILLISECONDS);
+
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(LED_OFF_DURATION_MILLISECONDS);
 }
